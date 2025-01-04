@@ -1,0 +1,18 @@
+{
+  "name": "farmlink",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "install": "concurrently --kill-others \"npm run serverInstall\" \"npm run clientInstall\"",
+
+    "server": "cd Server && npm run dev",
+    "serverInstall": "cd Server && npm install",
+    
+    "client": "cd Client && npm run dev",
+    "clientInstall": "cd Client && npm isntall"
+  },
+  "author": "",
+  "license": "ISC"
+}
