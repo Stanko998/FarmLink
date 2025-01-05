@@ -1,9 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import "./index.css";
 import App from "./App.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RecordList from "./components/RecordList.tsx";
+
+import About from "./Pages/About.tsx";
+import Card from "./Pages/Card.tsx";
+import Maps from "./Pages/Maps.tsx";
+import Profile from "./Pages/Profile.tsx";
+import Home from "./Pages/Home.tsx";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +18,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <RecordList />,
+        element: <Home />,
+      },
+      {
+        path: "/Maps",
+        element: <Maps />,
+      },
+      {
+        path: "/About",
+        element: <About />,
+      },
+      {
+        path: "/Card",
+        element: <Card />,
+      },
+      {
+        path: "/Profile",
+        element: <Profile />,
       },
     ],
   },
