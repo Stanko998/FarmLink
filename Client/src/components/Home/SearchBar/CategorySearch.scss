@@ -1,0 +1,15 @@
+.category-dropdown {
+  height: 100%;
+  padding: 8px; // Same padding as search input
+  font-size: 1rem; // Match the search input font size
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 10px; // Add some spacing between dropdown and search bar
+  background-color: #fff; // Ensure a similar background to the input
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #007bff; // Match the focus color of the search input
+  }
+}

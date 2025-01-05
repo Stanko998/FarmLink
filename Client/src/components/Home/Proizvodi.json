@@ -1,0 +1,412 @@
+[
+    {
+        "username": "farmerJohn",
+        "latitude": 42.6218,
+        "longitude": 21.1950,
+        "municipality": "Gracanica",
+        "place": "Gracanica",
+        "products": [
+            {
+                "title": "Fresh Organic Honey",
+                "image": "/images/med.jpg",
+                "unit": "500g Jar",
+                "price": "$10 per jar",
+                "category": "processed"
+            },
+            {
+                "title": "Fresh Organic Honey",
+                "image": "/images/med.jpg",
+                "unit": "500g Jar",
+                "price": "$10 per jar",
+                "category": "processed"
+            },
+            {
+                "title": "Fresh Organic Honey",
+                "image": "/images/med.jpg",
+                "unit": "500g Jar",
+                "price": "$10 per jar",
+                "category": "processed"
+            },
+            {
+                "title": "Beeswax Candles",
+                "image": "/images/candles1.jpg",
+                "unit": "Set of 3",
+                "price": "$15 per set",
+                "category": "processed"
+            },
+            {
+                "title": "Pollen Granules",
+                "image": "/images/pollen1.jpg",
+                "unit": "200g Pack",
+                "price": "$12 per pack",
+                "category": "processed"
+            },
+            {
+                "title": "Propolis Tincture",
+                "image": "/images/propolis.jpg",
+                "unit": "30ml Bottle",
+                "price": "$8 per bottle",
+                "category": "processed"
+            },
+            {
+                "title": "Royal Jelly",
+                "image": "/images/royal_jelly.jpg",
+                "unit": "100g Pack",
+                "price": "$25 per pack",
+                "category": "processed"
+            }
+        ]
+    },
+    {
+        "username": "farmerJane",
+        "latitude": 42.8903,
+        "longitude": 20.8660,
+        "municipality": "Kosovska Mitrovica",
+        "place": "Suvi Do",
+        "products": [
+            {
+                "title": "Free-Range Eggs",
+                "image": "/images/eggs1.jpg",
+                "unit": "12 Pack",
+                "price": "$5 per dozen",
+                "category": "meats"
+            },
+            {
+                "title": "Duck Eggs",
+                "image": "/images/duck_eggs.jpg",
+                "unit": "6 Pack",
+                "price": "$6 per pack",
+                "category": "meats"
+            },
+            {
+                "title": "Quail Eggs",
+                "image": "/images/quail_eggs.jpg",
+                "unit": "18 Pack",
+                "price": "$8 per pack",
+                "category": "meats"
+            },
+            {
+                "title": "Organic Chicken Breast",
+                "image": "/images/chicken_breast.jpg",
+                "unit": "500g",
+                "price": "$10 per pack",
+                "category": "meats"
+            },
+            {
+                "title": "Chicken Drumsticks",
+                "image": "/images/drumsticks.jpg",
+                "unit": "1kg",
+                "price": "$8 per kg",
+                "category": "meats"
+            }
+        ]
+    },
+    {
+        "username": "organicOlivia",
+        "latitude": 42.9142,
+        "longitude": 20.8406,
+        "municipality": "Zvecan",
+        "place": "Rudare",
+        "products": [
+            {
+                "title": "Organic Tomatoes",
+                "image": "/images/tomatoes1.jpg",
+                "unit": "1kg Bag",
+                "price": "$3 per kg",
+                "category": "vegetables"
+            },
+            {
+                "title": "Organic Cucumbers",
+                "image": "/images/cucumbers1.jpg",
+                "unit": "1kg Bag",
+                "price": "$4 per kg",
+                "category": "vegetables"
+            },
+            {
+                "title": "Organic Bell Peppers",
+                "image": "/images/peppers1.jpg",
+                "unit": "1kg Bag",
+                "price": "$5 per kg",
+                "category": "vegetables"
+            },
+            {
+                "title": "Organic Zucchini",
+                "image": "/images/zucchini.jpg",
+                "unit": "1kg Bag",
+                "price": "$3.5 per kg",
+                "category": "vegetables"
+            },
+            {
+                "title": "Organic Lettuce",
+                "image": "/images/lettuce.jpg",
+                "unit": "1 Head",
+                "price": "$2 per head",
+                "category": "vegetables"
+            }
+        ]
+    },
+    {
+        "username": "greenGreg",
+        "latitude": 42.9061,
+        "longitude": 20.6891,
+        "municipality": "Istog",
+        "place": "Dragolevac",
+        "products": [
+            {
+                "title": "Fresh Basil",
+                "image": "/images/basil1.jpg",
+                "unit": "100g Bundle",
+                "price": "$2 per bundle",
+                "category": "vegetables"
+            },
+            {
+                "title": "Fresh Mint",
+                "image": "/images/mint1.jpg",
+                "unit": "100g Bundle",
+                "price": "$2 per bundle",
+                "category": "vegetables"
+            },
+            {
+                "title": "Fresh Parsley",
+                "image": "/images/parsley1.jpg",
+                "unit": "100g Bundle",
+                "price": "$1.5 per bundle",
+                "category": "vegetables"
+            },
+            {
+                "title": "Fresh Rosemary",
+                "image": "/images/rosemary.jpg",
+                "unit": "50g Bundle",
+                "price": "$3 per bundle",
+                "category": "vegetables"
+            },
+            {
+                "title": "Fresh Thyme",
+                "image": "/images/thyme.jpg",
+                "unit": "50g Bundle",
+                "price": "$2.5 per bundle",
+                "category": "vegetables"
+            }
+        ]
+    },
+    {
+        "username": "dairyDaisy",
+        "latitude": 42.2229,
+        "longitude": 21.0361,
+        "municipality": "Štrpce",
+        "place": "Gotovuša",
+        "products": [
+            {
+                "title": "Goat Cheese",
+                "image": "/images/cheese1.jpg",
+                "unit": "200g Wheel",
+                "price": "$8 per wheel",
+                "category": "milky"
+            },
+            {
+                "title": "Cow Milk Yogurt",
+                "image": "/images/yogurt1.jpg",
+                "unit": "1L Bottle",
+                "price": "$4 per bottle",
+                "category": "milky"
+            },
+            {
+                "title": "Butter",
+                "image": "/images/butter1.jpg",
+                "unit": "250g Block",
+                "price": "$5 per block",
+                "category": "milky"
+            },
+            {
+                "title": "Greek Yogurt",
+                "image": "/images/greek_yogurt.jpg",
+                "unit": "500g Tub",
+                "price": "$6 per tub",
+                "category": "milky"
+            },
+            {
+                "title": "Cream Cheese",
+                "image": "/images/cream_cheese.jpg",
+                "unit": "200g Tub",
+                "price": "$4 per tub",
+                "category": "milky"
+            }
+        ]
+    },
+    {
+        "username": "veggieVictor",
+        "latitude": 43.0995,
+        "longitude": 20.8015,
+        "municipality": "Leposavić",
+        "place": "Leposavić",
+        "products": [
+            {
+                "title": "Carrots",
+                "image": "/images/carrots.jpg",
+                "unit": "1kg Bag",
+                "price": "$2 per kg",
+                "category": "vegetables"
+            },
+            {
+                "title": "Broccoli",
+                "image": "/images/broccoli.jpg",
+                "unit": "500g",
+                "price": "$3 per bunch",
+                "category": "vegetables"
+            },
+            {
+                "title": "Cauliflower",
+                "image": "/images/cauliflower.jpg",
+                "unit": "1 Head",
+                "price": "$3 per head",
+                "category": "vegetables"
+            },
+            {
+                "title": "Sweet Potatoes",
+                "image": "/images/sweet_potatoes.jpg",
+                "unit": "1kg Bag",
+                "price": "$4 per kg",
+                "category": "vegetables"
+            },
+            {
+                "title": "Spinach",
+                "image": "/images/spinach.jpg",
+                "unit": "300g Bag",
+                "price": "$3 per bag",
+                "category": "vegetables"
+            }
+        ]
+    },
+    {
+        "username": "orchardOscar",
+        "latitude": 42.6264,
+        "longitude": 21.4417,
+        "municipality": "Novo Brdo",
+        "place": "Novo Brdo",
+        "products": [
+            {
+                "title": "Red Apples",
+                "image": "/images/red_apples.jpg",
+                "unit": "1kg Bag",
+                "price": "$3 per kg",
+                "category": "fruits"
+            },
+            {
+                "title": "Pears",
+                "image": "/images/pears.jpg",
+                "unit": "1kg Bag",
+                "price": "$4 per kg",
+                "category": "fruits"
+            },
+            {
+                "title": "Cherries",
+                "image": "/images/cherries.jpg",
+                "unit": "500g Box",
+                "price": "$6 per box",
+                "category": "fruits"
+            },
+            {
+                "title": "Peaches",
+                "image": "/images/peaches.jpg",
+                "unit": "1kg Bag",
+                "price": "$5 per kg",
+                "category": "fruits"
+            },
+            {
+                "title": "Plums",
+                "image": "/images/plums.jpg",
+                "unit": "1kg Bag",
+                "price": "$4 per kg",
+                "category": "fruits"
+            }
+        ]
+    },
+    {
+        "username": "berryBella",
+        "latitude": 42.5093,
+        "longitude": 21.5807,
+        "municipality": "Ranilug",
+        "place": "Ropotovo",
+        "products": [
+            {
+                "title": "Strawberries",
+                "image": "/images/strawberries.jpg",
+                "unit": "500g Box",
+                "price": "$4 per box",
+                "category": "fruits"
+            },
+            {
+                "title": "Blueberries",
+                "image": "/images/blueberries.jpg",
+                "unit": "200g Pack",
+                "price": "$5 per pack",
+                "category": "fruits"
+            },
+            {
+                "title": "Raspberries",
+                "image": "/images/raspberries.jpg",
+                "unit": "200g Pack",
+                "price": "$6 per pack",
+                "category": "fruits"
+            },
+            {
+                "title": "Blackberries",
+                "image": "/images/blackberries.jpg",
+                "unit": "200g Pack",
+                "price": "$6 per pack",
+                "category": "fruits"
+            },
+            {
+                "title": "Cranberries",
+                "image": "/images/cranberries.jpg",
+                "unit": "200g Pack",
+                "price": "$7 per pack",
+                "category": "fruits"
+            }
+        ]
+    },
+    {
+        "username": "fruitfulFrank",
+        "latitude": 42.3759,
+        "longitude": 21.3826,
+        "municipality": "Gnjilane",
+        "place": "Klokot",
+        "products": [
+            {
+                "title": "Oranges",
+                "image": "/images/oranges.jpg",
+                "unit": "1kg Bag",
+                "price": "$3 per kg",
+                "category": "fruits"
+            },
+            {
+                "title": "Bananas",
+                "image": "/images/bananas.jpg",
+                "unit": "1kg",
+                "price": "$2 per kg",
+                "category": "fruits"
+            },
+            {
+                "title": "Grapes",
+                "image": "/images/grapes.jpg",
+                "unit": "500g Bag",
+                "price": "$4 per bag",
+                "category": "fruits"
+            },
+            {
+                "title": "Pineapples",
+                "image": "/images/pineapples.jpg",
+                "unit": "1 Piece",
+                "price": "$5 each",
+                "category": "fruits"
+            },
+            {
+                "title": "Mangoes",
+                "image": "/images/mangoes.jpg",
+                "unit": "1kg Bag",
+                "price": "$6 per kg",
+                "category": "fruits"
+            }
+        ]
+    }
+]
