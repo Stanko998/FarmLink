@@ -3,7 +3,7 @@ import cors from "cors";
 import { config } from "dotenv";
 
 import users from "./routes/users.js"
-// import records from "./routes/record.js"
+import farmers from "./routes/farmer.js"
 
 const serverEnv = config({ path: "./Server.env" }).parsed;
 
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/users", users)
-// app.use("/record", records)
+app.use("/farmer", farmers)
 
 app.listen(PORT, () => {
     console.log("Server listeing on port: " + PORT);

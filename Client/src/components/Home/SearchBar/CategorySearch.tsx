@@ -1,6 +1,3 @@
-import React from "react";
-import "./CategorySearch.scss";
-
 const CategorySearch = ({ selectedCategory, onCategoryChange }) => {
   const categories = [
     { value: "all", label: "All" },

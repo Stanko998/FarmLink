@@ -1,41 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Home.scss";
 
 import SearchBar from "../components/Home/SearchBar/SearchBar";
-import ProizvodCarousel from "../components/Home/ProizvodCarousel";
+import Farmer from "../components/Home/Farmer/Farmer";
 
-import productsData from "../components/Home/Proizvodi.json"; //TODO realizovati podatke preko baze podataka
-
-function getfarmers(searchResults: any) {
-  if (searchResults.length === 0) {
-    return productsData;
-  }
-
-  const farmers = productsData.filter((farmer) =>
-    farmer.products.some((product) =>
-      searchResults.some((searchResult: any) =>
-        product.title.toLowerCase().includes(searchResult.title.toLowerCase())
-      )
-    )
-  );
-
-  return farmers;
-}
+//DONE Realizovano uzimanje podataka iz baze podataka
 
 export default function Home() {
-  const [searchResults, setSearchResults] = useState<any>([]);
-  const farmers = getfarmers(searchResults);
+  const [searchResults, setSearchResults] = useState("");
+  const [records, setRecords] = useState<any>([]);
+
+  async function getRecords() {
+    const res = await fetch("http://localhost:5050/farmer/" + searchResults);
+    if (!res.ok) {
+      const message = "An error ";
+      console.log(message);
+      return;
+    }
+    const records = await res.json();
+    setRecords(records);
+  }
+
+  useEffect(() => {
+    getRecords();
+    return;
+  }, [searchResults.length]);
 
   return (
     <>
       <SearchBar onSearchResults={setSearchResults} />
 
-      {farmers.map((farmer, index) => (
-        <div className="farmer-products" key={index}>
-          <h2 className="farmer-username">USERNAME: {farmer.username}</h2>
-          <ProizvodCarousel products={farmer.products} />
+      <div className="page">
+        <h1>Svi Farmeri</h1>
+        <div className="Farmers">
+          {records.map((record: any) => {
+            return <Farmer record={record} key={record._id} />;
+          })}
         </div>
-      ))}
+      </div>
     </>
   );
 }

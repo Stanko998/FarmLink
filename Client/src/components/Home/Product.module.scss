@@ -23,7 +23,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: white; // Apply white color by default
+    color: black; // Apply white color by default
     border: none;
     cursor: pointer;
     font-size: 2rem;
@@ -33,9 +33,13 @@
     &.leftArrow {
       left: 10px;
     }
-
     &.rightArrow {
       right: 10px;
+    }
+    &::before {
+      color: black;
+      font-size: 2rem; // Customize font size
+      position: absolute;
     }
   }
 }

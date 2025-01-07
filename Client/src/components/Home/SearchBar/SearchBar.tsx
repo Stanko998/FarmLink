@@ -1,43 +1,43 @@
 import React, { useState } from "react";
-import productsData from "../Proizvodi.json";
+// import productsData from "../Proizvodi.json";
 import "./SearchBar.scss";
 import CategorySearch from "./CategorySearch";
 
-interface SearchBarProps {
-  onSearchResults: (results: any[]) => void;
-}
+//TODO refaktorisati skriptu u potpnosti
+//TODO Implementirati pretragu po imenu proizvoda
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearchResults }) => {
+const SearchBar = (props: any) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const term = event.target.value;
     setSearchTerm(term);
-    filterProducts(term, selectedCategory);
+    props.onSearchResults(term);
+    // filterProducts(term, selectedCategory);
   };
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    filterProducts(searchTerm, category);
+    // filterProducts(searchTerm, category);
   };
 
-  const filterProducts = (term: string, category: string) => {
-    if (term.trim() === "" && category === "all") {
-      onSearchResults(productsData.flatMap((farmer) => farmer.products));
-    } else {
-      const filteredProducts = productsData.flatMap((farmer) =>
-        farmer.products.filter(
-          (product) =>
-            (product.title.toLowerCase().includes(term.toLowerCase()) ||
-              product.category.toLowerCase().includes(term.toLowerCase())) &&
-            (category === "all" ||
-              product.category.toLowerCase() === category.toLowerCase())
-        )
-      );
-      onSearchResults(filteredProducts);
-    }
-  };
+  // const filterProducts = (term: string, category: string) => {
+  //   if (term.trim() === "" && category === "all") {
+  //     onSearchResults(productsData.flatMap((farmer) => farmer.products));
+  //   } else {
+  //     const filteredProducts = productsData.flatMap((farmer) =>
+  //       farmer.products.filter(
+  //         (product) =>
+  //           (product.title.toLowerCase().includes(term.toLowerCase()) ||
+  //             product.category.toLowerCase().includes(term.toLowerCase())) &&
+  //           (category === "all" ||
+  //             product.category.toLowerCase() === category.toLowerCase())
+  //       )
+  //     );
+  //     onSearchResults(filteredProducts);
+  //   }
+  // };
 
   return (
     <div className="search-container">

@@ -1,24 +1,30 @@
 .search-container {
-  width: 100%;
+  //DONE: CSS je uredjen
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f8f8f8;
-  padding: 10px;
+  padding: 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.search-input {
-  height: 100%;
-  padding: 8px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  width: calc(80% - 150px); // Reduce width to make space for dropdown
-  transition: border-color 0.3s ease;
+  & > * {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    transition: border-color 0.3s ease;
+    &:focus {
+      border-color: #007bff;
+    }
+  }
 
-  &:focus {
-    border-color: #007bff;
+  .category-dropdown {
+    margin-right: 10px; // Add some spacing between dropdown and search bar
+  }
+
+  .search-input {
+    width: calc(80% - 150px); // Reduce width to make space for dropdown
   }
 }

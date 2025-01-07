@@ -1,0 +1,45 @@
+.carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; // Ensure the carousel takes full width
+
+  .carouselItem {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    width: 100%; // Set the width to ensure proper alignment
+  }
+
+  .productImage {
+    max-width: 99%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .customArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; // Apply white color by default
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
+    z-index: 10;
+
+    &.leftArrow {
+      left: 10px;
+    }
+    &.rightArrow {
+      right: 10px;
+    }
+    &::before {
+      color: black;
+      font-size: 2rem; // Customize font size
+      position: absolute;
+    }
+  }
+}
