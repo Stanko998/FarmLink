@@ -2,17 +2,16 @@ import { ServerApiVersion } from "mongodb";
 import { config } from "dotenv";
 import mongoose from "mongoose";
 
-const serverEnv = config({ path: "./server.env" }).parsed;
 const clientEnv = config({ path: "./client.env" }).parsed;
 
 const USERNAME = clientEnv.USERNAME || "admin";
 const PASSWORD = clientEnv.PASSWORD || "admin";
 
-const URI = serverEnv.URI || "wwaem.mongodb.net";
-const CLUSTER = serverEnv.CLUSTER || "clusterPrvi";
-const DB = serverEnv.DB || "Biblioteka";
+const URI = process.env.URI || "wwaem.mongodb.net";
+const CLUSTER = process.env.CLUSTER || "clusterPrvi";
+const DB = process.env.DB || "Biblioteka";
 
-const FULLURI = clientEnv.FULLURI || `mongodb+srv://${USERNAME}:${PASSWORD}@${serverEnv.CLUSTER}.${URI}/?retryWrites=true&w=majority&appName=${CLUSTER}`
+const FULLURI = clientEnv.FULLURI || `mongodb+srv://${USERNAME}:${PASSWORD}@${CLUSTER}.${URI}/?retryWrites=true&w=majority&appName=${CLUSTER}`
 
 console.log(FULLURI);
 
@@ -23,10 +22,10 @@ async function connectDB() {
             serverApi: ServerApiVersion.v1,
             autoSelectFamily: false,
         })
-        console.log(`Connected to MongoDB database: ${DB} using Mongoose`);
+        console.log("\x1b[32m" + `Connected to MongoDB database: ${DB} using Mongoose` + "\x1b[0m");
     } catch (error) {
         if (error.name == "MongooseServerSelectionError") {
-            console.error("Greska je sa IP adresom ili portom");
+            console.error("\x1b[31m" + "Greska je sa IP adresom ili portom" + "\x1b[0m");
         } else {
             console.error("Failed to connect to MongoDB using Mongoose", error);
         }
