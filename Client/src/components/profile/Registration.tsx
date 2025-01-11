@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Registration.scss";
+import "../../assets/Style/components/profile/Registration.scss";
 
 export default function Registration(): any {
   const [username, setUsername] = useState("");

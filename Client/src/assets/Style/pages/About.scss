@@ -1,0 +1,69 @@
+.about-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding-bottom: 5%;
+  text-align: left;
+
+  .company-info {
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2a9d8f;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+  }
+
+  .customer-support {
+    h2 {
+      font-size: 2rem;
+      color: #264653;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .support-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      button {
+        background-color: #2a9d8f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+
+        &:hover {
+          background-color: #1f776c;
+        }
+      }
+    }
+  }
+}

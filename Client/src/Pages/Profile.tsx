@@ -1,4 +1,4 @@
-import "./Profile.scss";
+import "../assets/Style/pages/Profile.scss";
 import Login from "../components/profile/Login";
 
 export default function Profile() {

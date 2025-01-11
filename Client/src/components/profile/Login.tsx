@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Login.scss";
+import "../../assets/Style/components/profile/Login.scss";
 
 export default function Login(): any {
   const [username, setUsername] = useState("");

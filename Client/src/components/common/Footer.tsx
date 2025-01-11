@@ -2,7 +2,7 @@
 // import { CartContext } from "../Stranice/cart/CartProvider";
 import { NavLink } from "react-router-dom";
 // import logoImage from '../../assets/logo.png';
-import "./Footer.scss";
+import "../../assets/Style/components/common/Footer.scss";
 
 export default function Footer() {
   // const { cartItems, toggleCart } = useContext(CartContext);

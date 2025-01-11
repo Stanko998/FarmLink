@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Home.scss";
+import "../assets/Style/pages/Home.scss";
 
 import SearchBar from "../components/Home/SearchBar/SearchBar";
 import Farmer from "../components/Home/Farmer/Farmer";

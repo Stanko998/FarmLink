@@ -18,5 +18,5 @@ app.use("/users", users)
 app.use("/farmer", farmers)
 
 app.listen(PORT, () => {
-    console.log("Server listeing on port: " + PORT);
+    console.log("Server listeing on: \x1b[36m http://localhost:" + PORT + "\x1b[0m");
 })

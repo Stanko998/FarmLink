@@ -1,0 +1,41 @@
+.footer {
+  //TODO delimicno refatkorisano zavrsiti ostatak
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #013220;
+  color: #ffffff;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  padding: 0 20px;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 20px;
+    font-size: 18px;
+
+    .footer-link {
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #b5f3b5;
+        transform: scale(1.15); /* Slight scaling effect */
+      }
+    }
+  }
+}
