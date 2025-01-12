@@ -30,9 +30,9 @@ export default function Home() {
     <>
       <SearchBar onSearchResults={setSearchResults} />
 
-      <div className="page">
+      <div className="main">
         <h1>Svi Farmeri</h1>
-        <div className="Farmers">
+        <div className="farmers">
           {records.map((record: any) => {
             return <Farmer record={record} key={record._id} />;
           })}

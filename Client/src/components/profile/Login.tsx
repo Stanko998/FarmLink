@@ -9,7 +9,6 @@ export default function Login(): any {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
       const res = await fetch("http://localhost:5050/users/login", {
         method: "POST",
@@ -21,6 +20,7 @@ export default function Login(): any {
           password: password,
         }),
       });
+
       const records = await res.json();
       if (!records.success) {
         setError(records.error);
@@ -31,7 +31,7 @@ export default function Login(): any {
       console.error("doslo je do greske " + error);
     }
 
-    // TO DO: implement login logic here
+    // TODO: Implementovati logiku za uspesno logovanje
     // alert(`Welcome, ${username}!`);
   };
 

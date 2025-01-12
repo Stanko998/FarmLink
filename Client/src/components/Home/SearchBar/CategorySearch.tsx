@@ -1,3 +1,4 @@
+//TODO prepraviti da bude u TSX formatu
 const CategorySearch = ({ selectedCategory, onCategoryChange }) => {
   const categories = [
     { value: "all", label: "All" },

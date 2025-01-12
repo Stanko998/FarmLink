@@ -1,4 +1,4 @@
-.footer {
+footer {
   //TODO delimicno refatkorisano zavrsiti ostatak
   display: flex;
   align-items: center;
@@ -18,7 +18,9 @@
       margin: 0;
     }
   }
-
+  .active {
+    background-color: red;
+  }
   .footer-links {
     display: flex;
     align-items: center;
@@ -27,7 +29,7 @@
     margin-left: 20px;
     font-size: 18px;
 
-    .footer-link {
+    > * {
       text-decoration: none;
       color: #ffffff;
       transition: all 0.3s;

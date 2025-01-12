@@ -1,65 +1,65 @@
-.products-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  padding: 20px;
-  width: 100%;
-  padding-bottom: 5%;
-}
+//TODO refaktorisati kod
+.main {
+  .farmers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
-.farmer-products {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 90%;
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    .farmer-products {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 90%;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-.farmer-username {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-}
+      .farmer-username {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
 
-.product-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+      .carouselItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-.product-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #555;
-}
+        .product-title {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #555;
 
-.product-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
+          .productImage {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+          }
+          .productDetails {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 1rem;
+            color: #666;
 
-.product-details {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 1rem;
-  color: #666;
-
-  .product-unit,
-  .product-price {
-    padding: 5px 0;
+            .productUnit,
+            .productPrice {
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+    }
   }
 }

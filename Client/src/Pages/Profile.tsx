@@ -1,12 +1,7 @@
 import "../assets/Style/pages/Profile.scss";
 import Login from "../components/profile/Login";
 
+//TODO dodati da ako je korisnik prijavljen prikazuje mu profil u suprotnom treba da mu pokaze login formu
 export default function Profile() {
-  return (
-    <div className="profile-page">
-      <div className="profile-section">
-        <Login />
-      </div>
-    </div>
-  );
+  return <Login />;
 }

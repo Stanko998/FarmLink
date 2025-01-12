@@ -1,29 +1,22 @@
+//TODO refaktorisati kod
 .registration-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f4f4f9;
+  margin: auto;
+  background-color: #fff;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  padding-bottom: 5%;
 
   h2 {
     font-size: 2rem;
     color: #013220;
     margin-bottom: 20px;
-    text-align: center;
   }
 
   form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
 
     .input-field {
       margin-bottom: 15px;
@@ -58,8 +51,6 @@
   p {
     margin-top: 15px;
     font-size: 1rem;
-    color: #333;
-    text-align: center;
 
     .login-link {
       color: #02693e;

@@ -1,6 +1,7 @@
 import Product from "./Product";
 import { Carousel } from "./Carousel";
 
+//TODO proveriti
 export default function Farmer(props: any) {
   return (
     <div className="farmer farmer-products " key={props.record._id}>

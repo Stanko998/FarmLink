@@ -1,5 +1,6 @@
 import "../assets/Style/pages/About.scss";
 
+//TODO potreabno refaktorisanje
 export default function About() {
   return (
     <div className="about-page">

@@ -1,3 +1,4 @@
+//TODO refaktorisati kod
 export default function Product(props: any): any {
   return (
     <div className={"carouselItem"} key={props.product.index}>
@@ -7,8 +8,8 @@ export default function Product(props: any): any {
         className={"productImage"}
       />
       <h3>{props.product.title}</h3>
-      <div className={"productDetails"}>
-        <span>{props.product.unit}</span>
+      <div className="productDetails">
+        <span className="productPrice">{props.product.unit}</span>
         <span>${props.product.price}</span>
       </div>
     </div>

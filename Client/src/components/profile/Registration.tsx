@@ -29,15 +29,17 @@ export default function Registration(): any {
         throw new Error(records.error);
       }
       setError(null);
-    } finally {
+    } catch (error) {
+      console.error("doslo je do greske " + error);
     }
+    // TODO: Implementovati logiku za uspesno registovanje
   };
 
   return (
     <div className="registration-container">
+      <h2>Register</h2>
+      {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <h2>Register</h2>
-        {error && <p>{error}</p>}
         <input
           type="text"
           placeholder="Choose a username"
