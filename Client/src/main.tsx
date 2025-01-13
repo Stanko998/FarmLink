@@ -11,11 +11,10 @@ import Maps from "./Pages/Maps.tsx";
 import Profile from "./Pages/Profile.tsx";
 import About from "./Pages/About.tsx";
 import Card from "./Pages/Card.tsx";
-
 import Registration from "./components/profile/Registration.tsx";
 import Login from "./components/profile/Login.tsx";
+import UserPage from "./Pages/UserPage.tsx";
 
-//DONE: prepraviti rute da vode "/profile/login" i "/profile/registration"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +27,7 @@ const router = createBrowserRouter([
       { path: "/Profile", element: <Profile /> },
       { path: "/Profile/login", element: <Login /> },
       { path: "/Profile/Registration", element: <Registration /> },
+      { path: "/:username", element: <UserPage /> },
     ],
   },
 ]);
