@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import productsData from "../Proizvodi.json";
 import "./SearchBar.scss";
 import CategorySearch from "./CategorySearch";
 

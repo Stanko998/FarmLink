@@ -89,6 +89,7 @@ router.get("/", async (req, res) => {
     }
 });
 
+
 router.route("/:username").get(async (req, res) => {
     try {
         const results = await Farmer.find({ username: req.params.username });
@@ -106,18 +107,37 @@ router.route("/:username").get(async (req, res) => {
     res.send("Farmer deleted").status(200);
 });
 
-// router.get("/:productName", async (req, res) => {
+
+// router.route("/:id").get(async (req, res) => {
 //     try {
-//         const query = { "products.title": req.params.productName };
-//         const results = await Farmer.find(query);
+//         const results = await Farmer.findById(req.params.id);
 //         if (results.length === 0) {
 //             return res.status(404).send("No farmers found with the specified product");
 //         }
+
 //         res.send(results).status(200);
 //     } catch (err) {
 //         res.status(500).send(err);
 //     };
+// }).put(async (req, res) => {
+//     res.send("Farmer updated").status(200);
+// }).delete(async (req, res) => {
+//     res.send("Farmer deleted").status(200);
 // });
 
+/*
+router.get("/:productName", async (req, res) => {
+    try {
+        const query = { "products.title": req.params.productName };
+        const results = await Farmer.find(query);
+        if (results.length === 0) {
+            return res.status(404).send("No farmers found with the specified product");
+        }
+        res.send(results).status(200);
+    } catch (err) {
+        res.status(500).send(err);
+    };
+});
+*/
 
 export default router;
