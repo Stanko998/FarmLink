@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import productsData from "../home/Proizvodi.json";
+// import productsData from "../home/Proizvodi.json";
 import "./UserPage.scss";
-import { CartContext } from "../cart/CartProvider";
+// import { CartContext } from "../cart/CartProvider";
 
 const UserPage = () => {
   const { username } = useParams();
@@ -22,7 +22,7 @@ const UserPage = () => {
   getRecords();
 
   // Find the farmer by username
-  const farmer = productsData.find((farmer) => farmer.username === username);
+  const farmer = records.find((farmer: any) => farmer.username === username);
 
   if (!farmer) {
     return <p>User not found</p>;
@@ -36,7 +36,7 @@ const UserPage = () => {
       </p>
       <h2>Products</h2>
       <div className="products-list">
-        {farmer.products.map((product, index) => (
+        {farmer.products.map((product: any, index: number) => (
           <div className="product-card" key={index}>
             <img
               src={product.image}
@@ -50,7 +50,7 @@ const UserPage = () => {
             <p>
               <strong>Price:</strong> {product.price}
             </p>
-            <button
+            {/* <button
               className="cart-button"
               onClick={() =>
                 handleAddToCart(
@@ -63,7 +63,7 @@ const UserPage = () => {
               }
             >
               Add to Cart
-            </button>
+            </button> */}
           </div>
         ))}
       </div>

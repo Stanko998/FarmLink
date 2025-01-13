@@ -89,9 +89,9 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.route("/:id").get(async (req, res) => {
+router.route("/:username").get(async (req, res) => {
     try {
-        const results = await Farmer.findById(req.params.id);
+        const results = await Farmer.find({ username: req.params.username });
         if (results.length === 0) {
             return res.status(404).send("No farmers found with the specified product");
         }

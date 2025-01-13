@@ -12,7 +12,7 @@ import Maps from "./Pages/Maps.tsx";
 import Profile from "./Pages/Profile.tsx";
 import Home from "./Pages/Home.tsx";
 import Registration from "./components/profile/Registration.tsx";
-
+import UserPage from "./Pages/UserPage.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +24,7 @@ const router = createBrowserRouter([
       { path: "/Card", element: <Card /> },
       { path: "/Profile", element: <Profile /> },
       { path: "/Registration", element: <Registration /> },
+      { path: "/:username", element: <UserPage /> },
       //TODO: prepraviti rute da vode /profile/login i /profile/registration
     ],
   },
