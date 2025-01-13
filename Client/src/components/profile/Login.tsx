@@ -60,7 +60,7 @@ export default function Login(): any {
       </form>
       <p>
         Don't have an account?{" "}
-        <NavLink to="/registration">Register here</NavLink>
+        <NavLink to="/Profile/Registration">Register here</NavLink>
       </p>
     </div>
   );

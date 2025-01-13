@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../../assets/Style/components/profile/Registration.scss";
 
 export default function Registration(): any {
@@ -66,9 +66,9 @@ export default function Registration(): any {
         </button>
         <p>
           Already have an account?{" "}
-          <Link to="/profile" className="login-link">
+          <NavLink to="/Profile/login" className="login-link">
             Log in here
-          </Link>
+          </NavLink>
         </p>
       </form>
     </div>

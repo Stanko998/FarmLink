@@ -6,13 +6,16 @@ import "./assets/Style/global.scss";
 
 import App from "./App.tsx";
 
-import About from "./Pages/About.tsx";
-import Card from "./Pages/Card.tsx";
+import Home from "./Pages/Home.tsx";
 import Maps from "./Pages/Maps.tsx";
 import Profile from "./Pages/Profile.tsx";
-import Home from "./Pages/Home.tsx";
-import Registration from "./components/profile/Registration.tsx";
+import About from "./Pages/About.tsx";
+import Card from "./Pages/Card.tsx";
 
+import Registration from "./components/profile/Registration.tsx";
+import Login from "./components/profile/Login.tsx";
+
+//DONE: prepraviti rute da vode "/profile/login" i "/profile/registration"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,8 +26,8 @@ const router = createBrowserRouter([
       { path: "/About", element: <About /> },
       { path: "/Card", element: <Card /> },
       { path: "/Profile", element: <Profile /> },
-      { path: "/Registration", element: <Registration /> },
-      //TODO: prepraviti rute da vode /profile/login i /profile/registration
+      { path: "/Profile/login", element: <Login /> },
+      { path: "/Profile/Registration", element: <Registration /> },
     ],
   },
 ]);
