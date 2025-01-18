@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 // import productsData from "../home/Proizvodi.json";
-import "./UserPage.scss";
+// import "./UserPage.scss";
 // import { CartContext } from "../cart/CartProvider";
 
 const UserPage = () => {
