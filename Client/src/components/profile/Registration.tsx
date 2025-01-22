@@ -15,10 +15,19 @@ export default function Registration(): any {
   const [role, setRole] = useState("");
 
   const [error, setError] = useState<null | string>(null);
-  // const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      setError("Invalid email address");
+      return;
+    }
 
     try {
       const res = await fetch("http://localhost:5050/users/register", {
@@ -27,11 +36,29 @@ export default function Registration(): any {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: username,
-          password: password,
+          username,
+          name,
+          lastName,
+          password,
+          email,
+          municipality,
+          place,
+          address,
+          role,
         }),
       });
-
+      if (res.status === 200) {
+        setUsername("");
+        setName("");
+        setLastName("");
+        setPassword("");
+        setConfirmPassword("");
+        setEmail("");
+        setMunicipality("");
+        setPlace("");
+        setAddress("");
+        setRole("");
+      }
       const records = await res.json();
       if (!records.success) {
         setError(records.error);
@@ -41,7 +68,6 @@ export default function Registration(): any {
     } catch (error) {
       console.error("doslo je do greske " + error);
     }
-    // TODO: Implementovati logiku za uspesno registovanje
   };
 
   return (
