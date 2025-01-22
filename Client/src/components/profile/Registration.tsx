@@ -4,7 +4,16 @@ import "../../assets/Style/components/profile/Registration.scss";
 
 export default function Registration(): any {
   const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [municipality, setMunicipality] = useState("");
+  const [place, setPlace] = useState("");
+  const [address, setAddress] = useState("");
+  const [role, setRole] = useState("");
+
   const [error, setError] = useState<null | string>(null);
   // const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -40,27 +49,85 @@ export default function Registration(): any {
       <h2>Register</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Choose a username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="input-field"
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="input-field"
-        />
-        {/* <input
-          type="password"
-          placeholder="Confirm your password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          className="input-field"
-        /> */}
+        <div className="form-group">
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="Choose a username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="input-field"
+            />
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input-field"
+            />
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="input-field"
+            />
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input-field"
+            />
+            <select
+              type="role"
+              placeholder="Choose your role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              className="input-field"
+            >
+              <option value="farmer">Farmer</option>
+              <option value="customer">Customer</option>
+            </select>
+          </div>
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="input-field"
+            />
+            <input
+              type="text"
+              placeholder="Enter your last name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="input-field"
+            />
+            <input
+              type="text"
+              placeholder="Enter your municipality"
+              value={municipality}
+              onChange={(e) => setMunicipality(e.target.value)}
+              className="input-field"
+            />
+            <input
+              type="text"
+              placeholder="Enter your place"
+              value={place}
+              onChange={(e) => setPlace(e.target.value)}
+              className="input-field"
+            />
+            <input
+              type="text"
+              placeholder="Enter your address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              className="input-field"
+            />
+          </div>
+        </div>
         <button type="submit" className="btn-submit">
           Register
         </button>
