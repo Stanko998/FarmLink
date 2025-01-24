@@ -14,6 +14,7 @@ import Card from "./Pages/Card.tsx";
 import Registration from "./components/profile/Registration.tsx";
 import Login from "./components/profile/Login.tsx";
 import UserPage from "./Pages/UserPage.tsx";
+import { AuthProvider } from "./components/userAuth/AuthContext.tsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );

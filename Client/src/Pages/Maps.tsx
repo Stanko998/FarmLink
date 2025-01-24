@@ -4,7 +4,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import markerShadowPng from "leaflet/dist/images/marker-shadow.png";
-
+import "../assets/Style/pages/Maps.scss";
 import FarmFilter from "../components/map/FarmFilter";
 import PopupContent from "../components/map/PopupContent";
 

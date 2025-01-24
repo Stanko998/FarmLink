@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../userAuth/AuthContext";
 import "../../assets/Style/components/profile/Login.scss";
 
 export default function Login(): any {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<null | string>(null);
-
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -26,6 +28,14 @@ export default function Login(): any {
         setError(records.error);
         throw new Error(records.error);
       }
+
+      login({
+        username: records.user.username,
+        name: records.user.name,
+      });
+
+      navigate("/");
+
       setError(null);
     } catch (error) {
       console.error("doslo je do greske " + error);
