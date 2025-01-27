@@ -1,7 +1,8 @@
 // src/components/common/Header.tsx
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useAuth } from "../userAuth/AuthContext";
+import { useAuth } from "../../context/AuthContext";
+import { useFarmers } from "../../context/FarmersProvider";
 import SearchBar from "../Home/SearchBar/SearchBar";
 import FarmFilter from "../map/FarmFilter";
 // ^ Import your filter or any other special components you want on certain pages
@@ -10,6 +11,19 @@ export default function Header() {
   const { user, logout } = useAuth();
   const location = useLocation();
   // location.pathname will tell us which route the user is on, e.g. "/Maps", "/About", etc.
+
+  //ovde ce da uzmemo podatke koji su nam potrebni da bi smo mogli da filtriramo korisnike
+
+  const {
+    searchTerm,
+    setSearchTerm,
+    selectedCategory,
+    setSelectedCategory,
+    selectedMunicipality,
+    setSelectedMunicipality,
+    selectedPlace,
+    setSelectedPlace,
+  } = useFarmers();
 
   const handleLogout = () => logout();
 
@@ -25,16 +39,18 @@ export default function Header() {
     leftContent = (
       <div style={{ display: "flex", gap: "1rem" }}>
         <FarmFilter
-          farmers={[]} // pass real props if needed
-          onFilterUpdate={() => {}}
-          selectedCategory="all"
-          setSelectedCategory={() => {}}
-          searchTerm=""
-          setSearchTerm={() => {}}
-          selectedMunicipality=""
-          setSelectedMunicipality={() => {}}
-          selectedPlace=""
-          setSelectedPlace={() => {}}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          selectedMunicipality={selectedMunicipality}
+          setSelectedMunicipality={setSelectedMunicipality}
+          selectedPlace={selectedPlace}
+          setSelectedPlace={setSelectedPlace}
+          farmers={[]}
+          onFilterUpdate={function (filteredFarmers: Farmer[]): void {
+            throw new Error("Function not implemented.");
+          }}
         />
         {/* Could put a <LocationFilter /> or something here, or combined in FarmFilter */}
       </div>

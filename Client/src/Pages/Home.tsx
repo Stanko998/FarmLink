@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <SearchBar onSearchResults={setSearchResults} />
+      {/* <SearchBar onSearchResults={setSearchResults} /> */}
 
       <div className="main">
         <h1>Svi Farmeri</h1>

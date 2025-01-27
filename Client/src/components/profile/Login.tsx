@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../userAuth/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import "../../assets/Style/components/profile/Login.scss";
 
 export default function Login(): any {
