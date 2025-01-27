@@ -106,12 +106,13 @@ export default function Registration(): any {
               className="input-field"
             />
             <select
-              type="role"
-              placeholder="Choose your role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
               className="input-field"
             >
+              <option value="" disabled>
+                Choose your role
+              </option>
               <option value="farmer">Farmer</option>
               <option value="customer">Customer</option>
             </select>

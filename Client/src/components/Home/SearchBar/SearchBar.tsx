@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.scss";
 import CategorySearch from "./CategorySearch";
+import Header from "../../common/Header";
 
 //TODO refaktorisati skriptu u potpnosti
 //TODO Implementirati pretragu po imenu proizvoda
