@@ -16,6 +16,7 @@ import Login from "./components/profile/Login.tsx";
 import UserPage from "./Pages/UserPage.tsx";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import { FarmersProvider } from "./context/FarmersProvider.tsx";
+import UserProfile from "./Pages/UserProfile.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,8 @@ const router = createBrowserRouter([
       { path: "/Profile/login", element: <Login /> },
       { path: "/Profile/Registration", element: <Registration /> },
       { path: "/:username", element: <UserPage /> },
+      // { path: "/Sell", element: < />}
+      { path: "/UserProfile", element: <UserProfile /> },
     ],
   },
 ]);
