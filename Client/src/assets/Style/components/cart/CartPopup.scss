@@ -1,0 +1,49 @@
+/* src/components/cart/CartPopup.scss */
+.cart-popup {
+    position: fixed;        
+    bottom: 15%;           //from buttom
+    right: 1%;            //from right
+    z-index: 3;          /* High z-index so it appears on top */
+    background-color:#013220; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 30%;
+    height: 50%;
+    overflow-y: auto;
+  }
+  
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  p{
+    color: white;
+  }
+  .cart-header button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .cart-popup ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-popup li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .cart-footer {
+    margin-top: 1rem;
+    color: white;
+  }
+  
+  .cart-footer button {
+    cursor: pointer;
+  }
+  

@@ -1,10 +1,12 @@
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { CartContext } from "../../context/CartProvider";
 // import "../assets/Style/components/common/Footer.scss";
 
 export default function Footer() {
   const { user } = useAuth();
-
+  const cartContext = useContext(CartContext);
   let profileLink;
   if (!user) {
     profileLink = <NavLink to="/Profile">Profile</NavLink>;
@@ -26,6 +28,14 @@ export default function Footer() {
         <NavLink to="/Maps">Map</NavLink>
         {profileLink}
         <NavLink to="/About">About</NavLink>
+        <button
+          className="basket"
+          onClick={() => {
+            if (cartContext) cartContext.toggleCart();
+          }}
+        >
+          Basket ({cartContext?.cartItems.length ?? 0})
+        </button>
       </div>
     </footer>
   );

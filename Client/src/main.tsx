@@ -17,6 +17,7 @@ import UserPage from "./Pages/UserPage.tsx";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import { FarmersProvider } from "./context/FarmersProvider.tsx";
 import UserProfile from "./Pages/UserProfile.tsx";
+import CartProvider from "./context/CartProvider.tsx";
 
 const router = createBrowserRouter([
   {
@@ -40,9 +41,11 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <AuthProvider>
-      <FarmersProvider>
-        <RouterProvider router={router} />
-      </FarmersProvider>
+      <CartProvider>
+        <FarmersProvider>
+          <RouterProvider router={router} />
+        </FarmersProvider>
+      </CartProvider>
     </AuthProvider>
   </StrictMode>
 );

@@ -29,6 +29,20 @@ footer {
     margin-left: 20px;
     font-size: 18px;
 
+    .basket { 
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      margin: 0 15px;
+      background: none; 
+      border: none; 
+      cursor: pointer; 
+      transition: color 0.3s, transform 0.3s;
+
+      &:hover {
+        color: lightgreen; 
+        transform: scale(1.15); 
+      }}
     > * {
       text-decoration: none;
       color: #ffffff;
