@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useFarmers } from "../../context/FarmersProvider";
 import SearchBar from "../Home/SearchBar/SearchBar";
 import FarmFilter from "../map/FarmFilter";
-// ^ Import your filter or any other special components you want on certain pages
+import "../../assets/Style/components/common/Header.scss";
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -72,10 +72,10 @@ export default function Header() {
       }}
     >
       {/* Left side: route-specific content */}
-      <div>{leftContent}</div>
+      <div className="left-content">{leftContent}</div>
 
       {/* Right side: user info */}
-      <div>
+      <div className="right-content">
         {/* If user is logged in, show greeting + logout. Else show a login link. */}
         {user ? (
           <>
