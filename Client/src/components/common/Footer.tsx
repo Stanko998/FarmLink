@@ -11,8 +11,12 @@ export default function Footer() {
   if (!user) {
     profileLink = <NavLink to="/Profile">Profile</NavLink>;
   } else if (user.role === "farmer") {
-    profileLink = <NavLink to="/Sell">Sell</NavLink>;
-    profileLink = <NavLink to="/UserProfile">User Profile</NavLink>;
+    profileLink = (
+      <>
+        <NavLink to="/Sell">Sell</NavLink>
+        <NavLink to="/UserProfile">User Profile</NavLink>
+      </>
+    );
   } else {
     profileLink = <NavLink to="/UserProfile">User Profile</NavLink>;
   } // Check if the farmer is loged in, if he is give him the option to access his profile and sell
