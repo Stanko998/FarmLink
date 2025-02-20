@@ -1,0 +1,30 @@
+/* FarmFilter.scss */
+
+.farm-filter {
+    width: 100%;          /* Let it expand fully in the header’s left-content */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;          /* Some vertical spacing between top/bottom rows */
+  
+    /* The top <div> holds your selects and button */
+    > div:first-child {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;    /* So if screen is narrow, they wrap to next line */
+      align-items: center;
+  
+      select, button {
+        /* Optionally add extra styling to keep them consistent */
+        flex: 0 0 auto; 
+      }
+    }
+  
+    /* The bottom <div> holds the text input */
+    > div:last-child {
+      /* Ensure the search input can stretch wide */
+      input {
+        width: 100%;
+      }
+    }
+  }
+  

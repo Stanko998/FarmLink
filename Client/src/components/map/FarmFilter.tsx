@@ -1,6 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-// import "./FarmFilter.scss";
-// import "../../header/Header.scss";
+import "../../assets/Style/components/maps/FarmFilter.scss";
 // import "../../header/search/CategorySearch.scss";
 import LocationFilter from "./LocationFilter";
 // If you have a PriceFilter component, import it here
@@ -61,7 +60,7 @@ const FarmFilter: React.FC<FarmFilterProps> = ({
   };
 
   return (
-    <div style={{ marginBottom: 10 }}>
+    <div className="farm-filter">
       <div>
         {/* Category */}
         <select

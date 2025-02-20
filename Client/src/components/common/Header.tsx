@@ -30,14 +30,14 @@ export default function Header() {
   // Decide what to render on the left side
   let leftContent: React.ReactNode = null;
 
+  //home page
   if (location.pathname === "/") {
-    // If user is on Home route
     leftContent = <SearchBar onSearchResults={() => {}} />;
+
+    //maps page
   } else if (location.pathname === "/Maps") {
-    // If on Maps route
-    // Optionally include the entire FarmFilter or only parts of it
     leftContent = (
-      <div style={{ display: "flex", gap: "1rem" }}>
+      <div>
         <FarmFilter
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
@@ -64,13 +64,7 @@ export default function Header() {
   }
 
   return (
-    <header
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "10px",
-      }}
-    >
+    <header className={user ? "" : "no-user"}>
       {/* Left side: route-specific content */}
       <div className="left-content">{leftContent}</div>
 
@@ -83,7 +77,7 @@ export default function Header() {
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <NavLink to="/Profile/login">Login</NavLink>
+          <></>
         )}
       </div>
     </header>
