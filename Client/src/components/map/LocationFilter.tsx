@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Farmer } from "../../Pages/Maps"; // Or a shared interface file
+import { Farmer } from "../../context/FarmersProvider"; // Or a shared interface file
 
 interface LocationFilterProps {
   farmers: Farmer[];

@@ -18,24 +18,32 @@ const Maps: React.FC = () => {
   const { filteredFarmers } = useFarmers();
 
   return (
-    <MapContainer center={[42.6218, 21.195]} zoom={10} style={{ height: 500 }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&copy; OpenStreetMap contributors"
-      />
-
-      {filteredFarmers.map((farmer) => (
-        <Marker
-          key={farmer._id || farmer.username}
-          position={[farmer.latitude!, farmer.longitude!]}
-          icon={defaultIcon}
+    <div className="page-content">
+      <div className="map-wrapper">
+        <MapContainer
+          center={[42.6218, 21.195]}
+          zoom={10}
+          // remove style={{ height: 500 }}
+          className="leaflet-container"
         >
-          <Popup>
-            <PopupContent farmer={farmer} />
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&copy; OpenStreetMap contributors"
+          />
+          {filteredFarmers.map((farmer) => (
+            <Marker
+              key={farmer._id || farmer.username}
+              position={[farmer.latitude!, farmer.longitude!]}
+              icon={defaultIcon}
+            >
+              <Popup>
+                <PopupContent farmer={farmer} />
+              </Popup>
+            </Marker>
+          ))}
+        </MapContainer>
+      </div>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 // import ProizvodCarousel from "../home/ProizvodCarousel";
-import { Farmer } from "../../Pages/Maps"; // Or a shared interface if you prefer
+import { Farmer } from "../../context/FarmersProvider"; // Or a shared interface if you prefer
 
 interface PopupContentProps {
   farmer: Farmer;

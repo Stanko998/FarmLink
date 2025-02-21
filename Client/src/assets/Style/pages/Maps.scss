@@ -1,0 +1,35 @@
+/* src/assets/Style/pages/Maps.scss */
+
+   #page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  .page-content {
+    flex: 1 0 auto;   
+    position: relative; 
+  
+    .map-wrapper {
+      width: 100%;
+      height: 100%;
+
+      .leaflet-container {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  footer {
+    flex: 0 0 auto;
+  }
+  
+  header {
+    flex: 0 0 auto;
+  }
+  

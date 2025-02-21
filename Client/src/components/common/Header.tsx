@@ -1,8 +1,8 @@
 // src/components/common/Header.tsx
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { useFarmers } from "../../context/FarmersProvider";
+import { Farmer, useFarmers } from "../../context/FarmersProvider";
 import SearchBar from "../Home/SearchBar/SearchBar";
 import FarmFilter from "../map/FarmFilter";
 import "../../assets/Style/components/common/Header.scss";
