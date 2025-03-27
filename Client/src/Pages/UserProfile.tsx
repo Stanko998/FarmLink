@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import { Farmer, useFarmers } from "../context/FarmersProvider";
 import { Navigate } from "react-router-dom";
 import "../assets/Style/pages/UserProfile.scss";
 
@@ -14,6 +13,14 @@ interface FullUserData {
   place: string;
   address: string;
   role: string;
+  // If your server returns hashed password or something, you can omit that
+}
+
+/** Additional password fields for updating password */
+interface PasswordData {
+  currentPassword: string;
+  newPassword: string;
+  confirmNewPassword: string;
 }
 
 export default function UserProfile() {
@@ -31,6 +38,11 @@ export default function UserProfile() {
   const [address, setAddress] = useState("");
   const [role, setRole] = useState("customer");
 
+  // For password changes
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+
   // For success/error messages
   const [message, setMessage] = useState<string | null>(null);
 
@@ -41,6 +53,7 @@ export default function UserProfile() {
   useEffect(() => {
     async function fetchUserData() {
       try {
+        // Example: GET /users/:username
         const res = await fetch(`http://localhost:5050/users/${user.username}`);
         if (!res.ok) {
           throw new Error("Failed to fetch user data");
@@ -64,9 +77,17 @@ export default function UserProfile() {
     fetchUserData();
   }, [user.username]);
 
-  // Save updated fields
+  // Save updated fields (including password if changed)
   const handleSaveChanges = async () => {
-    const updatedData: FullUserData = {
+    // Basic check: if user typed new password, confirm it matches
+    if (newPassword && newPassword !== confirmNewPassword) {
+      setMessage("New password and confirm password do not match.");
+      return;
+    }
+
+    // Construct the updated data object
+    // (the server can decide if it wants to update the password if newPassword is present)
+    const updatedData = {
       username,
       name,
       lastName,
@@ -75,9 +96,12 @@ export default function UserProfile() {
       place,
       address,
       role,
+      currentPassword, // needed for server to verify user identity
+      newPassword, // the new password to set
     };
 
     try {
+      // Example: PUT /users/:username
       const res = await fetch(`http://localhost:5050/users/${user.username}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -91,6 +115,11 @@ export default function UserProfile() {
 
       setMessage("Profile updated successfully!");
       setIsEditing(false); // exit edit mode after successful save
+
+      // Clear password fields
+      setCurrentPassword("");
+      setNewPassword("");
+      setConfirmNewPassword("");
     } catch (error) {
       console.error("Error updating profile:", error);
       setMessage("Error updating profile. Please try again.");
@@ -128,6 +157,26 @@ export default function UserProfile() {
     );
   };
 
+  // Additional fields for password
+  const renderPasswordField = (
+    label: string,
+    value: string,
+    setValue: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    if (!isEditing) return null; // only show password fields in edit mode
+
+    return (
+      <div className="field">
+        <label>{label}</label>
+        <input
+          type="password"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </div>
+    );
+  };
+
   return (
     <div className="user-profile-container">
       <div className="profile-header">
@@ -158,6 +207,21 @@ export default function UserProfile() {
 
         {renderField("Address", address, setAddress)}
         {renderField("Role", role, setRole, "select")}
+      </div>
+
+      {/* Password fields (only show if editing) */}
+      <div className="password-section">
+        {renderPasswordField(
+          "Current Password",
+          currentPassword,
+          setCurrentPassword
+        )}
+        {renderPasswordField("New Password", newPassword, setNewPassword)}
+        {renderPasswordField(
+          "Confirm New Password",
+          confirmNewPassword,
+          setConfirmNewPassword
+        )}
       </div>
 
       {isEditing && (
