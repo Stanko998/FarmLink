@@ -1,43 +1,42 @@
-import { useState, useEffect } from "react";
-import "../assets/Style/pages/Home.scss";
-
-import SearchBar from "../components/Home/SearchBar/SearchBar";
-import Farmer from "../components/Home/Farmer/Farmer";
-
-//DONE Realizovano uzimanje podataka iz baze podataka
+import React, { useState, useEffect } from "react";
+import Card from "./Card";
+import "../assets/Style/pages/Home.scss"; // We'll define .products-grid here
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState("");
-  const [records, setRecords] = useState<any>([]);
+  const [records, setRecords] = useState<any[]>([]);
 
   async function getRecords() {
     const res = await fetch("http://localhost:5050/farmer/" + searchResults);
     if (!res.ok) {
-      const message = "An error ";
-      console.log(message);
+      console.log("An error occurred fetching data.");
       return;
     }
-    const records = await res.json();
-    setRecords(records);
+    const data = await res.json();
+    setRecords(data);
   }
 
   useEffect(() => {
     getRecords();
-    return;
+    // We re-fetch whenever searchResults length changes
   }, [searchResults.length]);
 
-  return (
-    <>
-      {/* <SearchBar onSearchResults={setSearchResults} /> */}
+  // Flatten each farmer into a list of products, each with a farmerUsername
+  const allProducts = records.flatMap((farmer) => {
+    return farmer.products.map((prod: any) => ({
+      ...prod,
+      farmerUsername: farmer.username,
+    }));
+  });
 
-      <div className="main">
-        <h1>Svi Farmeri</h1>
-        <div className="farmers">
-          {records.map((record: any) => {
-            return <Farmer record={record} key={record._id} />;
-          })}
-        </div>
+  return (
+    <div className="main">
+      <h1>All Products</h1>
+      <div className="products-grid">
+        {allProducts.map((product, index) => (
+          <Card key={index} product={product} />
+        ))}
       </div>
-    </>
+    </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartProvider";
-// import "../assets/Style/components/common/Footer.scss";
+//import "../assets/Style/components/common/Footer.scss";
 
 export default function Footer() {
   const { user } = useAuth();

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 // import productsData from "../home/Proizvodi.json";
-// import "./UserPage.scss";
+import "../assets/Style/pages/UserPage.scss";
 // import { CartContext } from "../cart/CartProvider";
 
 const UserPage = () => {
@@ -43,13 +43,18 @@ const UserPage = () => {
               alt={product.title}
               className="product-image"
             />
-            <h3>{product.title}</h3>
-            <p>
-              <strong>Unit:</strong> {product.unit}
-            </p>
-            <p>
-              <strong>Price:</strong> {product.price}
-            </p>
+            <div className="product-info">
+              <h3>{product.title}</h3>
+              {product.description && (
+                <p className="product-description">{product.description}</p>
+              )}
+              <p>
+                <strong>Unit:</strong> {product.unit}
+              </p>
+              <p>
+                <strong>Price:</strong> {product.price}
+              </p>
+            </div>
             {/* <button
               className="cart-button"
               onClick={() =>
